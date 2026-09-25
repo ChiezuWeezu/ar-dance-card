@@ -10,8 +10,9 @@
     </style>
   </head>
   <body>
+    <!-- Points to target.mind (without 's') and turns off the stuck loading spinner -->
     <a-scene 
-      mindar-image="imageTargetSrc: ./targets.mind;" 
+      mindar-image="imageTargetSrc: ./target.mind; uiLoading: no; uiScanning: yes;" 
       color-space="sRGB" 
       renderer="colorManagement: true, physicallyCorrectLights: true" 
       vr-mode-ui="enabled: false" 
@@ -24,14 +25,14 @@
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        <!-- TEST 1: Bright Red Box placed right above the target -->
-        <a-box position="0 0.5 0" scale="0.3 0.3 0.3" material="color: red;"></a-box>
+        <!-- Bright Red Box Test to confirm tracking triggers -->
+        <a-box position="0 0.4 0" scale="0.3 0.3 0.3" material="color: red;"></a-box>
 
-        <!-- TEST 2: Your 3D Character scaled up to 1.0 -->
+        <!-- Your 3D Character -->
         <a-gltf-model 
           rotation="0 0 0" 
           position="0 0 0" 
-          scale="1 1 1" 
+          scale="0.5 0.5 0.5" 
           src="#dancingCharacter" 
           animation-mixer>
         </a-gltf-model>
